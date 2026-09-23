@@ -1,7 +1,8 @@
 import random
 
-alumnos = 1000000
+alumnos = 100000
 materias = 70
+
 
 matriz = []
 
@@ -14,30 +15,35 @@ for i in range(alumnos):
     matriz.append(fila)
 
 
-print("\n      ", end="")
+print("\n          ", end="")
 
 for j in range(materias):
-    print("Materia", j + 1, end="   ")
+    print("Materia", j + 1, end="    ")
 
 print()
 
 for i in range(alumnos):
-    print("Alumno", i + 1, end=": ")
+    print("Alumno", i + 1, end=":    ")
 
     for j in range(materias):
-        print(matriz[i][j], end="        ")
+        print(matriz[i][j], end="          ")
 
     print()
 
 
-numero = int(input("\n¿Qué alumno quieres consultar?: "))
+print("\nBuscar calificacion y alumno")
 
-if numero >= 1 and numero <= alumnos:
+alumno = int(input("Escribe el numero del alumno: "))
+materia = int(input("Escribe el numero de la materia: "))
 
-    print("\nDatos del Alumno", numero)
 
-    for j in range(materias):
-        print("Materia", j + 1, ":", matriz[numero - 1][j])
+if alumno >= 1 and alumno <= alumnos and materia >= 1 and materia <= materias:
+
+    calificacion = matriz[alumno - 1][materia - 1]
+
+    print("\nAlumno:", alumno)
+    print("Materia:", materia)
+    print("Calificacion:", calificacion)
 
 else:
-    print("Ese alumno no existe.")
+    print("\nEl alumno o la materia no existen.")
