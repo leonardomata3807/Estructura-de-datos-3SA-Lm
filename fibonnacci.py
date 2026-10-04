@@ -1,5 +1,3 @@
-# Programa para mostrar la serie de Fibonacci
-
 cantidad = int(input("¿Cuántos números de Fibonacci quieres mostrar? "))
 
 a = 0
